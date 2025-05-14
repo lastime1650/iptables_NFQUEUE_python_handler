@@ -15,7 +15,7 @@ iptables에서 NFQUEUE라는 NetFilterQUEUE 라는 큐를 통하여 유저모드
 <br>
 
 # 구성도
-![initial](https://github.com/lastime1650/iptables_NFQUEUE_python_handler/blob/main/image.png)
+![initial](https://github.com/lastime1650/iptables_NFQUEUE_python_handler/blob/main/image1.png)
 
 패킷이 외부에서 들어올 때, mangle 테이블의 PREROUTING에서는 패킷을 FORWARD로 이동시킬 지, INPUT 시켜버릴지 결정합니다.<br><br>
 이때 FORWARD를 시켜버리기 위해서는 iptables의 내부 호스트로 destination IP로 바꿔주면 ( DNAT ) FORWARD합니다. <br>
