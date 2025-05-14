@@ -11,4 +11,11 @@ iptables에서 NFQUEUE라는 NetFilterQUEUE 라는 큐를 통하여 유저모드
 
 현재 최신 iptables에서는 INVALID ( XMAS, NULL ,,, 스캔 ) 패킷을 포트포워딩한 호스트에 FORWARD를 하지않고, INPUT해버리는 문제(?)가 있어, 이를 해결하기 위해 레포지토리를 생성하였습니다.
 
-[!initial](https://github.com/lastime1650/iptables_NFQUEUE_python_handler/blob/main/image.png)
+<br>
+
+# 구성도
+![initial](https://github.com/lastime1650/iptables_NFQUEUE_python_handler/blob/main/image.png)
+
+패킷이 외부에서 들어올 때, mangle 테이블의 PREROUTING에서는 패킷을 FORWARD로 이동시킬 지, INPUT 시켜버릴지 결정합니다.
+이때 FORWARD를 시켜버리기 위해서는 iptables의 내부 호스트로 destination IP로 바꿔주면 ( DNAT ) FORWARD합니다. 
+반대로, 내부 -> 외부일 때는 source IP를 밖으로 나가는 Network Interface의 주소로 변경하면 FORWARD합니다. 
