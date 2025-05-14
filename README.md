@@ -10,3 +10,5 @@ iptables에서 NFQUEUE라는 NetFilterQUEUE 라는 큐를 통하여 유저모드
 <br>
 
 현재 최신 iptables에서는 INVALID ( XMAS, NULL ,,, 스캔 ) 패킷을 포트포워딩한 호스트에 FORWARD를 하지않고, INPUT해버리는 문제(?)가 있어, 이를 해결하기 위해 레포지토리를 생성하였습니다.
+
+[!initial](https://github.com/lastime1650/iptables_NFQUEUE_python_handler/blob/main/image.png)
